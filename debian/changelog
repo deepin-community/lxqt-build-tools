@@ -1,20 +1,105 @@
-lxqt-build-tools (0.8.0.1-1) UNRELEASED; urgency=medium
+lxqt-build-tools (0.13.0-2) unstable; urgency=medium
 
-  * update
+  * Change team email to <team+lxqt@tracker.debian.org>.
 
- -- LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>  Thu, 09 Jun 2022 04:50:06 -0400
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 12 Jun 2023 22:57:38 +0800
 
-lxqt-build-tools (0.8.0.1-1) unstable; urgency=medium
+lxqt-build-tools (0.13.0-1) unstable; urgency=medium
 
-  * Replace gunixconnection.h file in gio-unix include dir check (#74)
-  * That file was moved from gio-unix to gio in GLib 2.71.1:
-  * https://gitlab.gnome.org/GNOME/glib/-/commit/83d45c4f35dc87ba
+  [ ChangZhuo Chen (陳昌倬) ]
+  * New upstream release.
 
- -- Angie.J <doucaixia@uniontech.com>  Tue, 09 Jun 2022 16:48:50 +0800
+  [ Andrew Lee (李健秋) ]
+  * debian/control: bump to Standards-version to 4.6.2, no changes needed.
+  * debian/copyright: update.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 10 Jun 2023 08:56:03 +0200
+
+lxqt-build-tools (0.12.0-3) unstable; urgency=medium
+
+  [ Aaron Rainbolt ]
+  * debian/copyright: Overhauled copyright file.
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Update and sort d/copyright.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 19 Dec 2022 00:06:56 +0800
+
+lxqt-build-tools (0.12.0-2) unstable; urgency=medium
+
+  * Add d/lintian-overrides to suppress no-manual-page warning.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Fri, 16 Dec 2022 00:27:18 +0800
+
+lxqt-build-tools (0.12.0-1) unstable; urgency=medium
+
+  [ Palo Kisa ]
+  * debian/watch: Fix github uscan processing
+  * New upstream version 0.12.0
+  * debian/patches: Remove patches included in 0.12.0
+
+  [ Aaron Rainbolt ]
+  * debian/watch: Overhaul watch file to make it compatible with GitHub again.
+  * debian/control: Added 'Rules-Requires-Root: no' to silence a Lintian gripe.
+  * debian/copyright: Added myself to the copyright file.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Mon, 21 Nov 2022 23:20:14 +0800
+
+lxqt-build-tools (0.11.0-2) unstable; urgency=medium
+
+  * debian/watch: fix uscan error.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 22 Oct 2022 18:45:37 +0800
+
+lxqt-build-tools (0.11.0-1) unstable; urgency=medium
+
+  * Team Upload
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Remove obsolete field Name from debian/upstream/metadata (already present in
+    machine-readable debian/copyright).
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+
+  [ Yao Wei (魏銘廷) ]
+  * debian/patches: Use gdesktopappinfo.h to find gio-unix-2.0
+  * debian/upstream/metadata: Remove Repository-Browser (typoed entry)
+  * debian/control:
+    - Bump Standards-Version to 4.6.1;  No related changes.
+    - Update version dependency of libglib2.0-dev
+
+ -- Yao Wei (魏銘廷) <mwei@debian.org>  Sat, 17 Sep 2022 21:17:34 +0800
+
+lxqt-build-tools (0.11.0-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release.
+    - Fixes compatibility with GLib ≥ 2.71.1 (closes: #1008416).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 14 May 2022 16:00:20 +0300
+
+lxqt-build-tools (0.10.0-1) unstable; urgency=medium
+
+  [ Andrew Lee (李健秋) ]
+  * New upstream version 0.10.0
+  * Add debian/salsa-ci.yml file.
+
+  [ Severus Septimius ]
+  * Update debian/changelog
+  * Update debian/copyright
+  * Bump Standards to 4.6.0 (no changes)
+
+  [ Andrew Lee (李健秋) ]
+  * Update debian/copyright.
+  * Added myself as uploader.
+  * Use debhelper-compat = 13, no changes needed.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 08 Jan 2022 18:01:14 +0800
 
 lxqt-build-tools (0.8.0-1) unstable; urgency=medium
 
   * Team upload.
+
   [ Sophie Brun ]
   * Update the debian/upstream/signing-key.asc
   * New upstream version 0.8.0

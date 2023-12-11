@@ -1,7 +1,5 @@
-#!/bin/sh
-
 #=============================================================================
-# Copyright 2018 Alf Gaida <agaida@siduction.org>
+# Copyright 2020 Luís Pereira <luis.artur.pereira@gmail.com>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -26,25 +24,29 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #=============================================================================
+# FindXTerm
+#
+# Try to find the XTerm executable
+#
+# This will define the following variables:
+#
+# `XTerm_FOUND`
+#     True if XTerm executable is available.
+#
+# `XTerm_EXECUTABLE`
+#     The XTerm executable.
+#
 
-# lxqt-transupdate
-# Update LXQt translation files.
+# Find XTerm executable
+find_program(XTerm_EXECUTABLE NAMES xterm)
 
-# just to be sure - for distributions that user qtchooser
-# Debian and derivatives, Fedora, FreeBSD, Mageia, OpenMandriva, PCLinuxOS
-export QT_SELECT=5
+include(FindPackageHandleStandardArgs)
 
-TEMPLATES=$(find . -name \*.ts | grep -v '_')
-for i in $TEMPLATES; do
-  echo "\n\n==== $i ====\n"
-  TRANSDIR=$(dirname $i)
-  SOURCEDIR=$(dirname $TRANSDIR)
-  # template-update
-  echo "== Template Update =="
-  echo "lupdate $SOURCEDIR -ts $i -locations absolute -no-obsolete\n"
-  lupdate  $SOURCEDIR -ts $i -locations absolute -no-obsolete
-  echo
-  echo "== Language updates =="
-  echo "lupdate $SOURCEDIR -ts $TRANSDIR/*_*.ts -locations absolute -no-obsolete\n"
-  lupdate  $SOURCEDIR -ts $TRANSDIR/*_*.ts -locations absolute -no-obsolete
-done
+find_package_handle_standard_args(XTerm
+    FOUND_VAR
+        XTerm_FOUND
+    REQUIRED_VARS
+        XTerm_EXECUTABLE
+)
+
+mark_as_advanced(XTerm_EXECUTABLE)

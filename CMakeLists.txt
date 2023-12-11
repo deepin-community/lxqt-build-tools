@@ -9,9 +9,10 @@ project(lxqt-build-tools)
 option(WITH_XDG_DIRS_FALLBACK "Use our XDG_CONFIG_DIRS fallback" ON)
 
 set(LXQT_BUILD_TOOLS_MAJOR_VERSION 0)
-set(LXQT_BUILD_TOOLS_MINOR_VERSION 8)
+set(LXQT_BUILD_TOOLS_MINOR_VERSION 13)
 set(LXQT_BUILD_TOOLS_PATCH_VERSION 0)
 set(LXQT_BUILD_TOOLS_VERSION ${LXQT_BUILD_TOOLS_MAJOR_VERSION}.${LXQT_BUILD_TOOLS_MINOR_VERSION}.${LXQT_BUILD_TOOLS_PATCH_VERSION})
+set(LXQT_MIN_LINGUIST_VERSION "5.15.0")
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
@@ -42,7 +43,11 @@ file(GLOB toInstallFindModules
 
 file(GLOB toInstallModules
     "${PROJECT_SOURCE_DIR}/cmake/modules/*.cmake"
-    "${PROJECT_SOURCE_DIR}/cmake/modules/*.in"
+    "${PROJECT_SOURCE_DIR}/cmake/modules/*.cpp.in"
+)
+
+file(GLOB toInstallModulesHelpers
+    "${PROJECT_SOURCE_DIR}/cmake/modules/*.pl"
 )
 
 
@@ -59,6 +64,7 @@ file(COPY
 
 file(COPY
     ${toInstallModules}
+    ${toInstallModulesHelpers}
     DESTINATION "${MODULES_INSTALL_DIR}"
 )
 
@@ -74,6 +80,12 @@ configure_package_config_file(
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/LXQtConfigVars.cmake.in"
     "${MODULES_INSTALL_DIR}/LXQtConfigVars.cmake"
+    @ONLY
+)
+
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/LXQtTranslateTs.cmake.in"
+    "${MODULES_INSTALL_DIR}/LXQtTranslateTs.cmake"
     @ONLY
 )
 
@@ -100,6 +112,12 @@ configure_file(
     @ONLY
 )
 
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/LXQtTranslateTs.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/install/LXQtTranslateTs.cmake"
+    @ONLY
+)
+
 # The package version file is common to superbuild and installable mode
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/lxqt-build-tools-config-version.cmake.in"
@@ -121,7 +139,9 @@ install(
 install(
     FILES
         ${toInstallModules}
+        ${toInstallModulesHelpers}
         "${CMAKE_CURRENT_BINARY_DIR}/install/LXQtConfigVars.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/install/LXQtTranslateTs.cmake"
     DESTINATION
         "${MODULES_INSTALL_DIR}"
 )
