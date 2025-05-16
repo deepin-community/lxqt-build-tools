@@ -28,7 +28,7 @@ Files: lxqt-transupdate
        cmake/modules/LXQtTranslate.cmake
        cmake/modules/LXQtTranslateTs.cmake.in
        cmake/modules/LXQtTranslationLoader.cmake
-       cmake/modules/Qt5TranslationLoader.cmake
+       cmake/modules/Qt6TranslationLoader.cmake
 Copyright: 2006-2007 Laurent Montel <montel@kde.org>
            2010      Rafael Fernández López <ereslibre@kde.org>
            2013      Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
@@ -42,17 +42,13 @@ License: BSD-3-Clause
 
 Files: debian/*
 Copyright: 2015-2019 Alf Gaida <agaida@siduction.org>
-           2016-2023 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+           2016-2024 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
            2020      Sophie Brun <sophie@offensive-security.com>
            2020      Raphaël Hertzog <raphael@offensive-security.com>
-           2022-2023 Andrew Lee (李健秋) <ajqlee@debian.org>
+           2022-2025 Andrew Lee (李健秋) <ajqlee@debian.org>
            2022      Severus Septimius <severusseptimius7@gmail.com>
            2022      Aaron Rainbolt <arraybolt3@ubuntu.com>
 License: BSD-3-Clause
-
-Files: debian/usr/share/lxqt-build-tools/repository.spec.example
-Copyright: 2017-2018 Alf Gaida <agaida@siduction.org>
-License: WTFPL-2
 
 License: BSD-3-Clause
  Redistribution and use in source and binary forms, with or without
