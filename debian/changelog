@@ -1,3 +1,71 @@
+lxqt-build-tools (2.1.0-2) unstable; urgency=medium
+
+  * debian/control: drop duplicate Standards-Version line.
+  * Drop obsoloted files under debian/bin and debian/usr.
+    (Closes: #1102707)
+  * debian/copyright: drop license for removed files.
+  * debian/copyright: update.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Thu, 01 May 2025 17:48:01 +0200
+
+lxqt-build-tools (2.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Wed, 27 Nov 2024 21:22:17 +0800
+
+lxqt-build-tools (2.0.0+really2.0.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Mon, 25 Nov 2024 13:20:03 +0100
+
+lxqt-build-tools (2.0.0+really2.0.0-2~exp1) experimental; urgency=medium
+
+  * debian/control: build-deps on qt6-base-dev (>= 6.7.2).
+  * debian/control: bump to Standards-version to 4.7.0, no changes needed.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 06 Oct 2024 12:46:24 +0200
+
+lxqt-build-tools (2.0.0+really2.0.0-1) experimental; urgency=medium
+
+  * Revert "Revert to version really0.13.0." and upload to experimental.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Thu, 01 Aug 2024 07:44:36 +0200
+
+lxqt-build-tools (2.0.0+really0.13.0-1) unstable; urgency=medium
+
+  * Revert to version really0.13.0. (Closes: #1077186)
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Thu, 01 Aug 2024 07:08:25 +0200
+
+lxqt-build-tools (2.0.0-2) unstable; urgency=medium
+
+  * Run wrap-and-sort.
+  * Upload to unstable.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 24 Jul 2024 10:13:18 +0200
+
+lxqt-build-tools (2.0.0-1) experimental; urgency=medium
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * change team email
+  * New upstream release.
+  * d/control:
+    * Upgrade to Qt6.
+    * Migrate pkg-config to pkgconf.
+    * Remove libglib2.0-dev.
+  * d/copyright:
+    * Update copyright file list.
+    * Update copyright year.
+
+  [ Andrew Lee (李健秋) ]
+  * Clean up of group membership after two calls.
+  * debian/control: correct package name to makes piuparts happy.
+  * debian/copyright: update.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 12 May 2024 10:40:33 +0200
+
 lxqt-build-tools (0.13.0-2) unstable; urgency=medium
 
   * Change team email to <team+lxqt@tracker.debian.org>.

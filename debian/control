@@ -1,16 +1,11 @@
 Source: lxqt-build-tools
 Maintainer: LXQt Packaging Team <team+lxqt@tracker.debian.org>
-Uploaders: Alf Gaida <agaida@siduction.org>,
-           Andrew Lee (李健秋) <ajqlee@debian.org>,
+Uploaders: Andrew Lee (李健秋) <ajqlee@debian.org>,
            ChangZhuo Chen (陳昌倬) <czchen@debian.org>
 Section: devel
 Priority: optional
-Build-Depends: debhelper-compat (= 13),
-               cmake,
-               libglib2.0-dev,
-               pkg-config,
-               qtbase5-dev
-Standards-Version: 4.6.2
+Build-Depends: cmake, debhelper-compat (= 13), pkgconf, qt6-base-dev (>= 6.7.2)
+Standards-Version: 4.7.0
 Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-build-tools
 Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-build-tools.git
 Homepage: https://github.com/lxqt/lxqt-build-tools
@@ -18,15 +13,8 @@ Rules-Requires-Root: no
 
 Package: lxqt-build-tools
 Architecture: all
-Depends: ${misc:Depends},
-         binutils,
-         cmake,
-         libglib2.0-dev (>= 2.73.1),
-         pkg-config,
-         qttools5-dev,
-         qttools5-dev-tools
-Recommends: git,
-            lintian
+Depends: binutils, cmake, pkgconf, qt6-base-dev, ${misc:Depends}
+Recommends: git, lintian
 Description: Build tools for the LXQt desktop environment
  LXQt is an advanced, easy-to-use, and fast desktop environment based on Qt
  technologies. It has been tailored for users who value simplicity, speed, and
